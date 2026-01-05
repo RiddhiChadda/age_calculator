@@ -1,2 +1,6 @@
 year_born = int(input("What year were you born in ? "))
+month_born = int(input("What month were you born in ? "))
+date_born = int(input("What date were you born in ? "))
 print(year_born)
+print(month_born)
+print(date_born)

@@ -10,13 +10,16 @@ year_born = int(input("What year were you born in? "))
 month_born = int(input("What month were you born in? "))
 date_born = int(input("What day were you born on? "))
 
-age = current_year - year_born
+age_year = current_year - year_born
+age_month = current_month - month_born
+age_day = current_day - date_born
 
-if current_month < month_born:
-    age = age - 1
+if age_day < 0:
+    age_month -= 1
+    age_day += 30
 
-elif current_month == month_born:
-    if current_day < date_born:
-        age = age - 1
+if age_month < 0:
+    age_year -= 1
+    age_month += 12
 
-print("Your age is:", age)
+print("Your age is:", age_year , "years", age_month, "months", age_day, "days")

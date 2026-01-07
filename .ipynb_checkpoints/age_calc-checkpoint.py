@@ -16,21 +16,8 @@ age_month = current_month - month_born
 age_day = current_day - date_born
 
 if age_day < 0:
-
-    if current_month == 1:
-        previous_month = 12
-        previous_month_year = current_year - 1
-    else:
-        previous_month = current_month - 1
-        previous_month_year = current_year
-
-    days_in_previous_month = calendar.monthrange(
-        previous_month_year,
-        previous_month
-    )[1]
-
     age_month -= 1
-    age_day += days_in_previous_month
+    age_day += 30
 
 if age_month < 0:
     age_year -= 1

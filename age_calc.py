@@ -7,9 +7,22 @@ current_year = today.year
 current_month = today.month
 current_day = today.day
 
-year_born = int(input("What year were you born in? "))
-month_born = int(input("What month were you born in? "))
-date_born = int(input("What day were you born on? "))
+valid_date = False
+
+while(valid_date == False):
+    year_born = int(input("What year were you born in? "))
+    month_born = int(input("What month were you born in? "))
+    date_born = int(input("What day were you born on? "))
+
+    try:
+        datetime.datetime(year_born,month_born,date_born)
+        valid_date = True
+    except:
+        print("Invalid date. Please try again.")
+        valid_date = False
+
+
+
 
 age_year = current_year - year_born
 age_month = current_month - month_born
